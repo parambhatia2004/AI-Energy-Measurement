@@ -280,13 +280,6 @@ Embedding rows use Input rates and the Small tier for best estimate.
 | `GPU Fleet Estimate (40% Util)` | Fleet energy rate at 40% GPU utilisation × token count |
 | `GPU Fleet Estimate (80% Util)` | Fleet energy rate at 80% GPU utilisation × token count |
 
-#### 3d. New On-Prem Estimates (2 columns)
-
-| Column | Condition |
-|:---|:---|
-| `New Token Energy (OnP)` | Size in (S, M, L) — all tokens |
-| `New Output Token Energy (OnP)` | Size in (S, M, L) AND `Output` tokens only |
-
 ### Step 4: Averaging
 
 The calculation produces three aggregate figures from the 8 estimates:
@@ -297,9 +290,6 @@ The calculation produces three aggregate figures from the 8 estimates:
 | `Median (MWh)` | MEDIAN of all 8 energy columns |
 | `Average Without Lower Bound (MWh)` | AVERAGE of 7 columns (excl. lower bound) |
 
-> [!TIP]
-> Use **Average Without Lower Bound** for carbon calculations. The lower bound pulls the mean down; it is a known conservative outlier.
-
 ### Step 5: Carbon Calculation
 
 ```
@@ -309,7 +299,7 @@ Region Carbon Intensity = LOOKUP(region → grid-carbon-intensity)
 Carbon Usage (kgCO₂e)  = (Carbon Intensity / 1000) × (Avg Without Lower Bound × 1000)
 ```
 
-### Step 6: Country Lookup
+### Step 6: Country PUE Lookup
 
 ```
 Country = LOOKUP(region → country name from Region PUE table)
