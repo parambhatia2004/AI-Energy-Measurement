@@ -190,8 +190,6 @@ We calculate these rates by dividing measured GPU power consumption by observed 
 |:---|:---|
 | `Onprem Tokens Estimate (MWh)` | Empirical rate × all tokens (input + output) |
 | `Onprem Output Tokens Estimate (MWh)` | Empirical rate × output tokens only |
-| `New Token Energy (OnP)` | Updated empirical rate × all tokens |
-| `New Output Token Energy (OnP)` | Updated empirical rate × output tokens only |
 
 ### 2.5 Region PUE & Carbon Intensity
 
