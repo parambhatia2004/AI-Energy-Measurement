@@ -30,7 +30,7 @@ flowchart LR
 
     subgraph calc ["🟡 Calculation Paths"]
         H[Token-Based Calculation]
-        I[GPU-Based Calculation]
+        I[On-premise GPU-Based Calculation]
         J[Energy Averaging]
     end
 
